@@ -1,5 +1,4 @@
-..
-    .. eql:section-intro-page:: rocket
+.. eql:section-intro-page:: rocket
 
 ==========
 Quickstart
@@ -9,11 +8,17 @@ Welcome to EdgeDB!
 
 This quickstart will walk you through the entire process of creating a simple EdgeDB-powered application: installation, defining your schema, adding some data, and writing your first query. Let's jump in!
 
+The gameplan
+------------
 
-.. 1. Start with the :ref:`installation <ref_quickstart_install>`.
-.. 2. Set up your :ref:`database and schema <ref_quickstart_createdb>`.
-.. 3. Learn the basics about :ref:`EdgeQL <ref_quickstart_queries>`.
-.. 4. Make your data accessible via :ref:`GraphQL <ref_quickstart_graphql>`.
+1. :ref:`Installation <_ref_quickstart_install>`
+2. :ref:`Initialize a project <_ref_quickstart_createdb>`
+3. :ref:`Set up your schema <_ref_quickstart_createdb_sdl>`
+4. :ref:`Insert data <_ref_quickstart_insert_data>`
+5. :ref:`Run some queries <_ref_quickstart_queries>`
+6. :ref:`Migrate your schema <_ref_quickstart_migrations>`
+7. :ref:`Computables <_ref_quickstart_computables>`
+8. :ref:`Onwards and upwards <_ref_quickstart_onwards>`
 
 .. _ref_quickstart_install:
 
@@ -497,6 +502,7 @@ Now back in our REPL we can add Zendaya:
 ..     {default::Movie {id: 4d0c8ddc-54d4-11e9-8c54-7776f6130e05}}
 
 
+.. _ref_quickstart_computables:
 
 7. Computables
 ==============
@@ -579,6 +585,9 @@ Now we can easily fetch ``full_name`` just like any other property!
             }
         }
     }
+
+
+.. _ref_quickstart_onwards:
 
 8. Onwards and upwards
 ======================
