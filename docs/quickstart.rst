@@ -8,17 +8,15 @@ Welcome to EdgeDB!
 
 This quickstart will walk you through the entire process of creating a simple EdgeDB-powered application: installation, defining your schema, adding some data, and writing your first query. Let's jump in!
 
-The gameplan
-------------
 
-1. :ref:`Installation <_ref_quickstart_install>`
-2. :ref:`Initialize a project <_ref_quickstart_createdb>`
-3. :ref:`Set up your schema <_ref_quickstart_createdb_sdl>`
-4. :ref:`Insert data <_ref_quickstart_insert_data>`
-5. :ref:`Run some queries <_ref_quickstart_queries>`
-6. :ref:`Migrate your schema <_ref_quickstart_migrations>`
-7. :ref:`Computables <_ref_quickstart_computables>`
-8. :ref:`Onwards and upwards <_ref_quickstart_onwards>`
+..    :ref:`Installation <ref_quickstart_install>`
+..    :ref:`Initialize a project <ref_quickstart_createdb>`
+..    :ref:`Set up your schema <ref_quickstart_createdb_sdl>`
+..    :ref:`Insert data <ref_quickstart_insert_data>`
+..    :ref:`Run some queries <ref_quickstart_queries>`
+..    :ref:`Migrate your schema <ref_quickstart_migrations>`
+..    :ref:`Computables <ref_quickstart_computables>`
+..    :ref:`Onwards and upwards <ref_quickstart_onwards>`
 
 .. _ref_quickstart_install:
 
@@ -78,17 +76,20 @@ This starts an interactive tool that walks you through the process of setting up
 
     $ edgedb project init
 
-    No `edgedb.toml` found in `~/Documents/edgedb-quickstart` or above
-    Do you want to initialize a new project? [Y/n]
+    No `edgedb.toml` found in `~/Documents/edgedb-quickstart`
+    or above. Do you want to initialize a new project? [Y/n]
     > Y
+
     Specify the name of EdgeDB instance to use with this
     project [default: edgedb_quickstart]:
     > edgedb_quickstart
+
     How would you like to run EdgeDB for this project?
     1. Local (native package)
     2. Docker
-    Type a number to select an option:
+    Type a number to choose an option:
     > 1
+
     Checking EdgeDB versions...
     Specify the version of EdgeDB to use with this project
     [default: 1-beta2]:
@@ -111,7 +112,7 @@ This did a couple things.
 
 First, it scaffolded your project by creating a config file (``edgedb.toml``) and a schema file ``dbschema/default.esdl``. In the next section, you'll define your schema inside the generated ``default.esdl`` file.
 
-Second, it spun up an EdgeDB instance called ``edgedb-quickstart`` (or whatever name you chose during the ``edgedb project init`` flow). As long as you're inside the project directory (``~/Documents/edgedb-quickstart`` in this case) all ``edgedb`` CLI commands will be executed against this instance.
+Second, it spun up an EdgeDB instance called ``edgedb-quickstart`` (unless you overrode this with a different name). As long as you're inside the project directory (``~/Documents/edgedb-quickstart`` in this case) all ``edgedb`` CLI commands will be executed against this instance. For more details on how EdgeDB projects work, check out `this blog post </blog/introducing-edgedb-projects>`_.
 
 > Quick note! You can have several "instances" of EdgeDB running on your computer simultaneously. Each instance contains several "databases". Each database may contain several "schema modules" (though commonly your schema will be entirely defined inside the ``default`` module).
 
