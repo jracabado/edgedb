@@ -43,7 +43,8 @@ command below.
 
 This command downloads and executes a bash script that installs the ``edgedb``
 CLI on your machine. You may be asked for your password. Once the installation
-completes, **restart your terminal** so the ``edgedb`` command becomes available.
+completes, **restart your terminal** so the ``edgedb`` command becomes
+available.
 
 Now let's use the CLI to install the latest version of the EdgeDB database.
 
@@ -51,9 +52,11 @@ Now let's use the CLI to install the latest version of the EdgeDB database.
 
     $ edgedb server install
 
-> Depending on your OS, the native server packages might not yet be available,
-and you might need to install and run Docker to complete the EdgeDB server
-installation.
+.. note::
+
+    Depending on your OS, the native server packages might not yet be
+    available, and you might need to install and run Docker to complete the
+    EdgeDB server installation.
 
 Now let's set up your EdgeDB project.
 
@@ -128,10 +131,12 @@ commands will be executed against this instance. For more details on how
 EdgeDB projects work, check out
 `this blog post </blog/introducing-edgedb-projects>`_.
 
-> Quick note! You can have several "instances" of EdgeDB running on your
-computer simultaneously. Each instance contains several "databases". Each
-database may contain several "schema modules" (though commonly your schema
-will be entirely defined inside the ``default`` module).
+.. note::
+
+    Quick note! You can have several "instances" of EdgeDB running on your
+    computer simultaneously. Each instance contains several "databases". Each
+    database may contain several "schema modules" (though commonly your schema
+    will be entirely defined inside the ``default`` module).
 
 Let's give it a try! Run ``edgedb`` in your terminal. This will connect to
 your database and open a REPL. You're now connected to a live EdgeDB instance
@@ -155,6 +160,7 @@ language (SDL). It's an elegant, declarative way to define your data model. By
 convention, you write your schema inside a file called ``default.esdl`` inside
 a ``dbschema`` folder in your project directory. Alternatively you can split
 your schema across several ``.esdl`` files; the filenames don't matter.
+
 
 .. note::
 
@@ -236,11 +242,13 @@ individual migrations, revisit earlier questions, or exit the tool.
 When you complete the questions, a ``.edgeql`` migration file we be generated
 in the ``dbschema/migrations`` directory!
 
-> If you're interested, open this migration file to see what's inside! It's a
-simple EdgeQL script consisting of DDL commands like ``CREATE TYPE``, ``ALTER
-TYPE``, and ``CREATE PROPERTY``. When you generate migrations, EdgeDB reads
-your declared ``.esdl`` schema and generates a sequence of DDL commands that
-bring the instance into agreement with it.
+.. note::
+
+    If you're interested, open this migration file to see what's inside! It's
+    a simple EdgeQL script consisting of DDL commands like ``CREATE TYPE``,
+    ``ALTER TYPE``, and ``CREATE PROPERTY``. When you generate migrations,
+    EdgeDB reads your declared ``.esdl`` schema and generates a sequence of
+    DDL commands that bring the instance into agreement with it.
 
 
 Execute the migration
@@ -253,17 +261,19 @@ Let's apply the migration:
     $ edgedb migrate
     Applied m1la5u4qi... (00001.edgeql)
 
-> Each EdgeDB instance can contain multiple databases! By default this
-migration is executed against a database called ``default`` which is
-automatically created when you create an instance.
+.. note::
 
-> To use a non-default database, first create it with ``edgedb create-database
-my-database``. Then use the ``-d`` flag to tell the CLI which instance to run
-against:
+    Each EdgeDB instance can contain multiple databases! By default this
+    migration is executed against a database called ``default`` which is
+    automatically created when you create an instance.
 
-.. code-block:: bash
+    To use a non-default database, first create it with ``edgedb
+    create-database my-database``. Then use the ``-d`` flag to tell the CLI
+    which instance to run against:
 
-    $ edgedb -d my-database migrate
+    .. code-block:: bash
+
+        $ edgedb -d my-database migrate
 
 Let's make sure that worked. Run ``edgedb list-object-types`` to re-open the
 REPL. Then run the special ``\lt`` command to list all object types.
@@ -309,9 +319,11 @@ Now, let's add Ryan Gosling to the database with a simple EdgeQL query:
 
 That was easy!
 
-> By convention, we're using all-caps to indicate EdgeQL keywords, but EdgeQL
-isn't case sensitive; if you want, you can use ``insert`` (or ``InSeRt``)
-instead of ``INSERT``.
+.. note::
+
+    By convention, we're using all-caps to indicate EdgeQL keywords, but
+    EdgeQL isn't case sensitive; if you want, you can use ``insert`` (or
+    ``InSeRt``) instead of ``INSERT``.
 
 As you can see, EdgeQL differs from SQL in some important ways. It uses curly
 braces and the assignment operator (``:=``) to make queries **explicit** and
