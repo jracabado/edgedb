@@ -43,7 +43,7 @@ command below.
 
 This command downloads and executes a bash script that installs the ``edgedb``
 CLI on your machine. You may be asked for your password. Once the installation
-completes, restart your terminal so the ``edgedb`` command becomes available.
+completes, **restart your terminal** so the ``edgedb`` command becomes available.
 
 Now let's use the CLI to install the latest version of the EdgeDB database.
 
@@ -66,7 +66,7 @@ In a terminal, create a new directory and ``cd`` into it.
 
 .. code-block:: bash
 
-    $ cd ~/Documents
+    $ cd ~/Desktop # <- or wherever you want the project to live
     $ mkdir edgedb-quickstart
     $ cd edgedb-quickstart
 
@@ -83,7 +83,7 @@ up your first EdgeDB instance. You should see something like this:
 
     $ edgedb project init
 
-    No `edgedb.toml` found at `~/Documents/edgedb-quickstart`
+    No `edgedb.toml` found at `~/Desktop/edgedb-quickstart`
     or above. Do you want to initialize a new project? [Y/n]
     > Y
 
@@ -102,9 +102,9 @@ up your first EdgeDB instance. You should see something like this:
     [default: 1-beta2]:
     > 1-beta2
     ┌─────────────────────┬───────────────────────────────────────────────┐
-    │ Project directory   │ ~/Documents/edgedb-quickstart                 │
-    │ Project config      │ ~/Documents/edgedb-quickstart/edgedb.toml     │
-    │ Schema dir (empty)  │ ~/Documents/edgedb-quickstart/dbschema        │
+    │ Project directory   │ ~/Desktop/edgedb-quickstart                 │
+    │ Project config      │ ~/Desktop/edgedb-quickstart/edgedb.toml     │
+    │ Schema dir (empty)  │ ~/Desktop/edgedb-quickstart/dbschema        │
     │ Installation method │ Native System Package                         │
     │ Version             │ 1.0b2+ga7130d5c7.cv202104290000-202105060205  │
     │ Instance name       │ edgedb_quickstart                             │
@@ -123,7 +123,7 @@ define your schema in ``default.esdl``.
 
 Second, it spun up an EdgeDB instance called ``edgedb-quickstart`` (unless you
 overrode this with a different name). As long as you're inside the project
-directory (``~/Documents/edgedb-quickstart`` in this case) all ``edgedb`` CLI
+directory (``~/Desktop/edgedb-quickstart`` in this case) all ``edgedb`` CLI
 commands will be executed against this instance. For more details on how
 EdgeDB projects work, check out
 `this blog post </blog/introducing-edgedb-projects>`_.
