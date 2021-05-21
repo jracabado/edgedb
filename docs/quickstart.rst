@@ -10,7 +10,6 @@ This quickstart will walk you through the entire process of creating a simple
 EdgeDB-powered application: installation, defining your schema, adding some
 data, and writing your first query. Let's jump in!
 
-
 ..    :ref:`Installation <ref_quickstart_install>`
 ..    :ref:`Initialize a project <ref_quickstart_createdb>`
 ..    :ref:`Set up your schema <ref_quickstart_createdb_sdl>`
@@ -263,9 +262,10 @@ Let's apply the migration:
 
 .. note::
 
-    Each EdgeDB instance can contain multiple databases! By default this
-    migration is executed against a database called ``default`` which is
-    automatically created when you create an instance.
+    Each EdgeDB instance can contain multiple databases! When an instance is
+    created, an initial database called ``edgedb`` is automatically created.
+    This is the instance against which all CLI commands are executed by
+    default.
 
     To use a non-default database, first create it with ``edgedb
     create-database my-database``. Then use the ``-d`` flag to tell the CLI
